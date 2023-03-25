@@ -25,42 +25,26 @@ imgCollection[0].classList.add("show");
 
 let i = 0;
 
-btnPrev.classList.add("hide");
-
 btnNext.addEventListener("click", function(){
-  i++;
-
-  if(i == 0){
-    btnPrev.classList.add("hide");
+  if(i == (imgCollection.length) - 1){
+    imgCollection[i].classList.remove("show");
+    i = 0;
+    imgCollection[i].classList.add("show");
   }else{
-    btnPrev.classList.remove("hide");
+    i++;
+    imgCollection[i - 1].classList.remove("show");
+    imgCollection[i].classList.add("show");
   }
-
-  if(i == ((imgCollection.length) - 1)){
-    btnNext.classList.add("hide");
-  }else{
-    btnNext.classList.remove("hide");
-  }
-
-  imgCollection[i].classList.add("show");
-  imgCollection[i - 1].classList.remove("show");
 })
 
 btnPrev.addEventListener("click", function(){
-  i--;
-
   if(i == 0){
-    btnPrev.classList.add("hide");
+    imgCollection[i].classList.remove("show");
+    i = (imgCollection.length) - 1;
+    imgCollection[i].classList.add("show");
   }else{
-    btnPrev.classList.remove("hide");
+    i--;
+    imgCollection[i + 1].classList.remove("show");
+    imgCollection[i].classList.add("show");
   }
-
-  if(i == ((imgCollection.length) - 1)){
-    btnNext.classList.add("hide");
-  }else{
-    btnNext.classList.remove("hide");
-  }
-
-  imgCollection[i].classList.add("show");
-  imgCollection[i + 1].classList.remove("show");
 })
