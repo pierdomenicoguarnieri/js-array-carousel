@@ -25,26 +25,47 @@ imgCollection[0].classList.add("show");
 
 let i = 0;
 
+for(let j = 1; j < imgCollection.length; j++){
+  imgCollection[j].classList.add("scrolled");
+  imgCollection[j].classList.add("scrolled-u");
+}
+
 btnNext.addEventListener("click", function(){
+  for(let j = 0; j < imgCollection.length; j++){
+    imgCollection[j].classList.remove("scrolled-u");
+  }
+
   if(i == (imgCollection.length) - 1){
+    imgCollection[i].classList.add("scrolled");
     imgCollection[i].classList.remove("show");
     i = 0;
+    imgCollection[i].classList.remove("scrolled");
     imgCollection[i].classList.add("show");
   }else{
     i++;
+    imgCollection[i - 1].classList.add("scrolled");
     imgCollection[i - 1].classList.remove("show");
+    imgCollection[i].classList.remove("scrolled");
     imgCollection[i].classList.add("show");
   }
 })
 
 btnPrev.addEventListener("click", function(){
+  for(let j = 0; j < imgCollection.length; j++){
+    imgCollection[j].classList.remove("scrolled");
+  }
+
   if(i == 0){
+    imgCollection[i].classList.add("scrolled-u");
     imgCollection[i].classList.remove("show");
     i = (imgCollection.length) - 1;
+    imgCollection[i].classList.remove("scrolled-u");
     imgCollection[i].classList.add("show");
   }else{
     i--;
+    imgCollection[i + 1].classList.add("scrolled-u");
     imgCollection[i + 1].classList.remove("show");
+    imgCollection[i].classList.remove("scrolled-u");
     imgCollection[i].classList.add("show");
   }
 })
