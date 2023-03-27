@@ -37,10 +37,7 @@ let i = 0;
 
 for(let j = 1; j < imgCollection.length; j++){
   imgCollection[j].classList.add("scrolled");
-  imgCollection[j].classList.add("scrolled-u");
 }
-
-
 
 btnNext.addEventListener("click", function(){
   for(let j = 0; j < imgCollection.length; j++){
