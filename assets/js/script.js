@@ -41,7 +41,8 @@ for(let j = 1; j < imgCollection.length; j++){
 
 btnNext.addEventListener("click", function(){
   for(let j = 0; j < imgCollection.length; j++){
-    imgCollection[j].classList.remove("scrolled-u");
+    imgCollection[j].classList.remove("scrolled-u");    
+    imgCollection[j].classList.add("scrolled");
   }
 
   if(i == (imgCollection.length) - 1){
@@ -66,6 +67,7 @@ btnNext.addEventListener("click", function(){
 btnPrev.addEventListener("click", function(){
   for(let j = 0; j < imgCollection.length; j++){
     imgCollection[j].classList.remove("scrolled");
+    imgCollection[j].classList.add("scrolled-u");
   }
 
   if(i == 0){
